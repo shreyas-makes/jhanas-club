@@ -17,13 +17,13 @@ gem 'importmap-rails'
 gem 'jbuilder'
 gem 'metamagic' # easily insert metatags for SEO / opengraph
 gem 'methodz' # query db-backed object methods by partial name or type
-gem 'pg'
+gem 'sqlite3'
 gem 'postmark-rails'
 gem 'pretender'
 gem 'puma', '6.4.2'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rails', '8.0.0.rc1'
-gem 'redis'
+gem 'solid_cache'
 gem 'rename', '1.1.3', git: 'https://github.com/ryanckulp/rename' # remove this gem after use
 gem 'split', require: 'split/dashboard'
 gem 'sprockets-rails'

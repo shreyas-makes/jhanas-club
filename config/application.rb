@@ -27,6 +27,6 @@ module JhanasClub
     config.middleware.use ActionDispatch::Session::CookieStore
     
     # Background jobs configuration
-    config.active_job.queue_adapter = :solid_queue
+    config.active_job.queue_adapter = :solid_cache
   end
 end

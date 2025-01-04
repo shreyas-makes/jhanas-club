@@ -1,11 +1,11 @@
 development:
-  adapter: redis
-  url: redis://localhost:6379/1
+  adapter: solid_cache
+  url: solid_cache://localhost:6379/1
 
 test:
   adapter: test
 
 production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  adapter: solid_cache
+  url: <%= ENV.fetch("SOLID_CACHE_URL") { "solid_cache://localhost:6379/1" } %>
   channel_prefix: jhanas_club_production

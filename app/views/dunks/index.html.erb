@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
     <%# Header with site name and filter %>
     <div class="flex flex-col sm:flex-row justify-between items-center mb-8">
-      <h1 class="text-2xl font-normal text-gray-700 mb-4 sm:mb-0">jhanas.club</h1>
+      <%= link_to 'jhanas.club', root_path, class: "text-2xl font-normal text-gray-700 mb-4 sm:mb-0" %>
       <button class="w-full sm:w-auto text-gray-500 hover:text-gray-700 py-2 px-4 rounded-lg border border-gray-200" onclick="toggleFilterModal()">
         FILTER
       </button>
@@ -53,10 +53,7 @@
     <div class="mt-12 flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-gray-200 space-y-4 sm:space-y-0">
       <div class="flex space-x-6 text-sm">
         <div class="flex items-center space-x-2">
-          <svg class="h-4 w-4" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-          <span>WEBSITE</span>
+          <%= link_to "CONTRIBUTE", "https://github.com/shreyas-makes?tab=repositories", class: "text-sm text-gray-500 hover:text-gray-700 py-2 px-4 rounded-lg border border-gray-200" %>
         </div>
       </div>
       <div>
@@ -80,7 +77,7 @@
             <div class="space-y-2">
               <%= link_to "All", root_path, class: "block px-4 py-3 rounded-lg text-center #{!params[:theme] ? 'bg-gray-100' : 'hover:bg-gray-50'}" %>
               <% @available_themes.each do |theme| %>
-                <%= link_to theme.titleize.gsub('_', ' '), root_path(theme: theme), class: "block px-4 py-3 rounded-lg text-center #{params[:theme] == theme ? 'bg-gray-100' : 'hover:bg-gray-50'}" %>
+                <%= link_to theme.gsub('_', ' '), root_path(theme: theme), class: "block px-4 py-3 rounded-lg text-center #{params[:theme] == theme ? 'bg-gray-100' : 'hover:bg-gray-50'}" %>
               <% end %>
             </div>
           </div>

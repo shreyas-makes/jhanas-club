@@ -45,7 +45,7 @@ Rails.application.configure do
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
 
   # Replace the default in-process memory cache store with a durable alternative.
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :solid_cache, { url: ENV.fetch("SOLID_CACHE_URL") { "solid_cache://localhost:6379/1" } }
 
   # Prevent health checks from clogging up the logs.
   config.silence_healthcheck_path = "/up"

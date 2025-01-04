@@ -11,14 +11,12 @@ class Dunk < ApplicationRecord
   
     # Themes for jhana meditation practices
     THEMES = [
-      'first_jhana',
-      'second_jhana', 
-      'third_jhana',
-      'fourth_jhana',
-      'access_concentration',
-      'meditation_theory',
-      'practice_instructions',
-      'scientific_research'
+      'Books',
+      'Articles', 
+      'Social forums',
+      'PDF',
+      'Podcasts',
+      'Videos'
     ]
   
     # For ActiveAdmin
