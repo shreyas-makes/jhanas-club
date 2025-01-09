@@ -1,0 +1,31 @@
+service: jhanas-club
+image: railshobbyist/jhanas-club
+
+servers:
+  web:
+    - 78.47.103.193 # Replace with your actual Hetzner IP
+
+proxy:
+  ssl: true
+  host: jhanas.club
+  app_port: 3000
+
+registry:
+  username: railshobbyist # Your Docker Hub username
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+  clear:
+    RAILS_LOG_LEVEL: debug
+    WEB_CONCURRENCY: 2
+
+volumes:
+  - "jhanas_storage:/storage/database.sqlite3"
+
+asset_path: /rails/public/assets
+
+builder:
+  arch: amd64
