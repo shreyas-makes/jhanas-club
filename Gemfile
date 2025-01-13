@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.3.5'
 
-gem 'activeadmin', '4.0.0.beta13'
+gem 'activeadmin', '4.0.0.beta15'
 gem 'validate_url'
 gem 'aws-sdk-s3', require: false
 gem 'chartkick'
