@@ -22,24 +22,44 @@ def random_themes
   Dunk::THEMES.sample(rand(1..3))
 end
 
-# Create 20 dunks with varied data
+# Create dunks with static data
+titles = [
+  "Vipassana Method of Meditation",
+  "The Breath Practice",
+  "Buddha's Guide to Jhana",
+  "Mastering Mindful Mind",
+  "The Insight Path to Jhana"
+]
+
+authors = [
+  "Joseph Goldstein",
+  "Jack Kornfield",
+  "Sharon Salzberg",
+  "Bhante Gunaratana",
+  "Daniel Ingram"
+]
+
+descriptions = [
+  "A comprehensive guide to reaching the first jhana through breath meditation techniques.",
+  "This resource explains how to work with physical sensations as objects of meditation.",
+  "An in-depth exploration of the jhanas with practical instructions for attainment.",
+  "A practical guide to establishing a daily meditation practice targeting jhana states.",
+  "Modern perspectives on traditional concentration practices leading to jhana."
+]
+
+urls = [
+  "https://www.buddhanet.net/jhana-guide",
+  "https://www.accesstoinsight.org/meditation-manual",
+  "https://www.dhammatalks.org/jhana-practice",
+  "https://www.dharmaoverground.org/concentration-states"
+]
+
 20.times do |i|
   Dunk.create!(
-    title: [
-      "#{Faker::Ancient.god} Method of Meditation",
-      "The #{Faker::Science.element} Practice",
-      "#{Faker::Science.scientist}'s Guide to Jhana",
-      "Mastering #{Faker::Hobby.activity} Mind",
-      "The #{Faker::Company.buzzword.capitalize} Path to Jhana"
-    ].sample,
-    author: Faker::Name.name,
-    description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: true, random_sentences_to_add: 4),
-    url: [
-      "https://www.buddhanet.net/#{Faker::Internet.slug}",
-      "https://www.accesstoinsight.org/#{Faker::Internet.slug}",
-      "https://www.dhammatalks.org/#{Faker::Internet.slug}",
-      "https://www.dharmaoverground.org/#{Faker::Internet.slug}"
-    ].sample,
+    title: titles.sample,
+    author: authors.sample,
+    description: descriptions.sample,
+    url: urls.sample,
     themes: random_themes,
     published: [true, true, true, false].sample # 75% chance of being published
   )

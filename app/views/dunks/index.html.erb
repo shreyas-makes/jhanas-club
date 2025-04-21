@@ -1,4 +1,4 @@
-<div class=""></div>
+<div class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
     <%# Header with site name and filter %>
     <div class="flex flex-col sm:flex-row justify-between items-center mb-8">
@@ -56,7 +56,8 @@
           <%= link_to "CONTRIBUTE", "https://github.com/shreyas-makes?tab=repositories", class: "text-sm text-gray-500 hover:text-gray-700 py-2 px-4 rounded-lg border border-gray-200" %>
         </div>
       </div>
-      <div>
+      <div class="space-x-4">
+        <%= link_to "ABOUT", about_path, class: "text-sm text-gray-500 hover:text-gray-700 py-2 px-4 rounded-lg" %>
         <button class="text-sm text-gray-500 hover:text-gray-700 py-2 px-4 rounded-lg">CREDITS</button>
       </div>
     </div>

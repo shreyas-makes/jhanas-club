@@ -74,18 +74,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_04_181228) do
   end
 
   create_table "dunks", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
-    t.text "description"
-    t.string "url"
-    t.string "themes"
-    t.boolean "published"
+    t.string "title", null: false
+    t.string "author", null: false
+    t.text "description", null: false
+    t.string "url", null: false
+    t.text "themes", default: "--- []\n"
+    t.boolean "published", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["published"], name: "index_dunks_on_published"
   end
 
   create_table "mail_logs", force: :cascade do |t|
-    t.bigint "user_id"
+    t.integer "user_id"
     t.string "mailer"
     t.string "to"
     t.text "subject"
@@ -93,17 +94,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_04_181228) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_mail_logs_on_user_id"
-  end
-
-  create_table "meditation_resources", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
-    t.text "description"
-    t.string "url"
-    t.string "themes"
-    t.boolean "published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "script_tags", force: :cascade do |t|
